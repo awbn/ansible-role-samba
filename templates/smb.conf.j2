@@ -17,6 +17,10 @@
   fruit:aapl = yes
 {% endif %}
 
+{% if samba_multicast_dns_register is defined %}
+  multicast dns register = {{ samba_multicast_dns_register | ternary('yes','no') }}
+{% endif %}
+
   # Logging
 {% if samba_log is defined %}
   log file = {{ samba_log }}
